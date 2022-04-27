@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import DriverCreationForm
+from .forms import DriverCreationForm, CarSearchForm
 from .models import Driver, Car, Manufacturer
 
 
@@ -58,6 +58,18 @@ class ManufacturerDeleteView(LoginRequiredMixin, generic.DeleteView):
 class CarListView(generic.ListView):
     model = Car
     queryset = Car.objects.all().select_related("manufacturer")
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(CarListView, self).get_context_data(**kwargs)
+        context["search_form"] = CarSearchForm()
+        return context
+
+    def get_queryset(self):
+        model = self.request.GET.get("title")
+        if model:
+            return self.queryset.filter(model__icontains=model)
+        return self.queryset
 
 
 class CarDetailView(LoginRequiredMixin, generic.DetailView):

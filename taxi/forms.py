@@ -21,9 +21,13 @@ class DriverCreationForm(UserCreationForm):
             return license_number
         else:
             raise ValidationError("Number should have 3 uppercase letters "
-                                  "and 5 digits")
+                                  "and 5 digits - ABC:12345")
 
 
-class DriverSearch(forms.Form):
-    title = forms.CharField(max_length=255,
-                            required=False)
+class CarSearchForm(forms.Form):
+    title = forms.CharField(
+        max_length=15,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by model..."})
+    )
