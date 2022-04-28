@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Manufacturer List</h1>
-    <a class="btn btn-primary" href="{% url "taxi:manufacturer-create" %}" role="button">Create</a>
+    <h1>
+        Manufacturer List
+        <a class="btn btn-primary adding" href="{% url "taxi:manufacturer-create" %}" role="button">Create</a>
+    </h1>
     {% if manufacturer_list %}
       <table class="table">
         <tr>

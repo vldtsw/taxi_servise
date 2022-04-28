@@ -21,7 +21,7 @@ class DriverCreationForm(UserCreationForm):
             return license_number
         else:
             raise ValidationError("Number should have 3 uppercase letters "
-                                  "and 5 digits - ABC:12345")
+                                  "and 5 digits - ABC12345")
 
 
 class CarSearchForm(forms.Form):

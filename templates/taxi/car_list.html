@@ -2,8 +2,10 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>Car list</h1>
-    <a class="btn btn-primary" href="{% url "taxi:car-create" %}" role="button">Create</a>
+    <h1>
+        Car list
+        <a class="btn btn-primary adding" href="{% url "taxi:car-create" %}" role="button">Create</a>
+    </h1>
 
     <form action="" method="get" class="form-inline">
         {{ search_form|crispy }}
@@ -11,7 +13,7 @@
     </form>
 
     {% if car_list %}
-        <table class="table table-striped">
+        <table class="table">
         <tr>
             <th>ID</th>
             <th>Model</th>

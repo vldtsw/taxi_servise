@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
 
@@ -14,9 +15,9 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-{{ form.as_p }}
+{{ form|crispy }}
 
-<input type="submit" value="Login" class="btn btn-primary" />
+<input class="btn btn-primary" type="submit" value="Login" class="btn btn-primary" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
