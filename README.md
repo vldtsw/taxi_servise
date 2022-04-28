@@ -29,5 +29,5 @@ python manage.py runserver
 ![Website Interface](demo.png)
 
 Demo full accesses: 
-* Username:
-* Password:
+* Username - test_user
+* Password - PvySqaqU5pS5GgF
