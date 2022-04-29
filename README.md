@@ -17,7 +17,7 @@ source venv/bin/activate (on Linux and macOS) or venv\Scripts\activate (on Windo
 pip install -r requirements.txt
 python3 manage.py makemigrations
 python3 manage.py migrate
-python manage.py runserver # starts Django Server
+python manage.py runserver
 ```
 
 ## Features
