@@ -1,7 +1,13 @@
 body {
     margin-top: 20px;
+    background-color: #f2f2f2;
+    font-family: Ubuntu, serif;
 }
 
 .adding {
     float: right;
 }
+
+/*.list-group {*/
+/*    background-color: #c8d8e4;*/
+/*}*/
